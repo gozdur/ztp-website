@@ -1,146 +1,235 @@
-# Za Twoim Przewodem - Website Deployment Guide
+# Za Twoim Przewodem - GitHub Pages Deployment Guide
 
-## 📋 Project Summary
+## 🚀 GitHub Pages Quick Deploy
 
-A **production-ready, SEO-optimized static website** for Za Twoim Przewodem electrical contracting business.
+This is a **production-ready, SEO-optimized static website** perfect for GitHub Pages.
 
-### What's Been Created
-✅ **5 Main Pages** + **3 Blog Posts** = 8 fully optimized HTML pages  
-✅ **Responsive CSS** with brand colors (Gold #D4A574, Dark #2C2C2C)  
-✅ **JavaScript** for forms, navigation, analytics  
-✅ **SEO Toolkit** (robots.txt, sitemap.xml, schema markup)  
-✅ **2,350+ lines** of production code  
-✅ **Zero dependencies** - Pure HTML/CSS/JS  
+### What's Included
+✅ **8 Fully Optimized Pages** (5 main + 3 blog posts)  
+✅ **Responsive Design** (desktop/tablet/mobile)  
+✅ **Complete SEO Setup** (schema markup, sitemap, robots.txt)  
+✅ **Contact Forms & Newsletter** (ready for integration)  
+✅ **Brand Styling** (Gold #D4A574, Dark #2C2C2C)  
+✅ **Zero Dependencies** (Pure HTML/CSS/JS)  
+✅ **Automated Deployment** (GitHub Actions workflow included)
 
 ---
 
-## 🎯 Quick Start (Next Steps)
+## 📍 Step-by-Step GitHub Pages Setup
 
-### 1. Add Your Logo
+### Step 1: Enable GitHub Pages
+
+1. Go to: https://github.com/gozdur/ztp-website
+2. Click **Settings** (top right)
+3. In sidebar, click **Pages**
+4. Under "Build and deployment":
+   - **Source**: Select "GitHub Actions"
+   - (The workflow `.github/workflows/deploy.yml` is already configured)
+5. Click **Save**
+
+Your site will deploy to: **https://gozdur.github.io/ztp-website**
+
+### Step 2: Push Code to GitHub
+
+```bash
+cd /home/robot/ztp-website
+
+git add .
+git commit -m "Initial website deployment - SEO optimized for Za Twoim Przewodem"
+git push origin main
 ```
-Replace these files:
-- assets/logo.png (your company logo)
-- assets/favicon.png (browser tab icon)
-```
+
+### Step 3: Watch Deployment
+
+1. Go to your repo → **Actions** tab
+2. Watch the workflow run (takes 30-60 seconds)
+3. Once ✅ complete, your site is LIVE!
+
+---
+
+## 🔧 Before Going Live - Configure These
+
+### 1. Add Your Logo & Favicon
+
+Create these files in `assets/` folder:
+- `assets/logo.png` (your company logo)
+- `assets/favicon.png` (32x32 browser tab icon)
 
 ### 2. Update Contact Information
-Find and replace across all files:
-- Phone: `+48 123 456 789` → Your phone
-- Email: `info@zatwoimprzewodem.pl` → Your email
-- Address: `ul. Przykładowa 123, 00-000 Warszawa` → Your address
 
-**Quick way to find all instances:**
+Replace globally across all files:
+- `+48 123 456 789` → Your phone
+- `info@zatwoimprzewodem.pl` → Your email  
+- `ul. Przykładowa 123, 00-000 Warszawa` → Your address
+
+Quick search:
 ```bash
-grep -r "+48 123 456 789" /home/robot/ztp-website/
-grep -r "info@zatwoimprzewodem.pl" /home/robot/ztp-website/
+grep -r "+48 123 456 789" .
+grep -r "info@zatwoimprzewodem.pl" .
 ```
 
-### 3. Configure Google Analytics
-In all HTML files, find this line:
-```html
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  gtag('config', 'GA_MEASUREMENT_ID');
-</script>
-```
+### 3. Set Up Contact Form Handling
 
-Replace `GA_MEASUREMENT_ID` with your actual GA4 ID from Google Analytics 4 setup.
+Choose one service to receive form submissions:
 
-### 4. Set Up Form Handling
-
-**Choose ONE method:**
-
-#### A. Formspree (Easiest - Free)
+#### Formspree (Easiest)
 1. Go to https://formspree.io
-2. Create an account
-3. Create a new form (select "Manual Setup")
-4. Get your form endpoint (looks like: `https://formspree.io/f/xxxxxxxxxxxx`)
-5. In `script.js`, find line ~70 and uncomment:
+2. Create account and new form
+3. Get form endpoint: `https://formspree.io/f/YOUR_ID`
+4. Update `script.js` line ~53:
    ```javascript
-   const formspreeEndpoint = 'https://formspree.io/f/YOUR_FORM_ID';
+   const formspreeEndpoint = 'https://formspree.io/f/YOUR_ID';
    ```
 
-#### B. EmailJS (Free tier available)
+#### EmailJS (Alternative)
 1. Sign up at https://www.emailjs.com
-2. Create email template for contact forms
-3. Get your User ID, Service ID, Template ID
-4. In `script.js`, uncomment the `sendContactFormViaEmailJS` function (line ~130)
-5. Update the credentials
+2. Create service + template
+3. Uncomment EmailJS function in `script.js` (~line 140)
+4. Add your credentials
 
-#### C. Your Own Backend
-If you have a backend server, update `script.js` line ~120 to point to your endpoint.
+### 4. Set Up Google Analytics
 
-### 5. Update Domain (SEO)
-In `sitemap.xml`, replace all instances of:
-```
-https://zatwoimprzewodem.pl/
-```
-with your actual domain:
-```
-https://yourdomain.com/
-```
+1. Create GA4 property at: https://analytics.google.com
+2. Get your **Measurement ID** (format: G-XXXXXXX)
+3. In each HTML file, replace `GA_MEASUREMENT_ID`:
+   ```html
+   gtag('config', 'GA_MEASUREMENT_ID');  <!-- Replace this -->
+   ```
+
+### 5. Set Up Newsletter (Optional)
+
+For Mailchimp, ConvertKit, etc.:
+- Update `handleNewsletterSubmit()` in `script.js`
+- Add your email service API endpoint
 
 ---
 
-## 🚀 Deployment Options
+## 🌐 Custom Domain Setup (Optional)
 
-### Option 1: Vercel (★ RECOMMENDED - Fastest Setup)
+If you want `zatwoimprzewodem.pl` instead of `github.io`:
 
-**Why Vercel?**
-- Free HTTPS
-- Automatic deployments from Git
-- Global CDN (fast worldwide)
-- 0 configuration needed
+### 1. GitHub Pages Settings
 
-**Steps:**
-```bash
-1. Install Vercel CLI:
-   npm install -g vercel
-
-2. Deploy:
-   cd /home/robot/ztp-website
-   vercel
-
-3. Follow prompts and done! ✨
-```
-
-### Option 2: Netlify
-
-**Steps:**
-1. Go to https://app.netlify.com
-2. "New site from Git" → Select repository
-3. Build settings: Leave empty (static site)
-4. Publish directory: `.` (root)
-5. Deploy!
-
-### Option 3: GitHub Pages (Free, but slightly slower)
-
-**Steps:**
-```bash
-# Push to GitHub (if not already there)
-git add .
-git commit -m "Initial website content"
-git push origin main
-
-# In GitHub repository settings:
-1. Go to Settings → Pages
-2. Select "Deploy from a branch"
-3. Select "main" branch
+1. **Settings** → **Pages**
+2. Under "Custom domain": `zatwoimprzewodem.pl`
+3. Check "Enforce HTTPS"
 4. Save
+
+GitHub will create a `CNAME` file automatically.
+
+### 2. Update DNS Records
+
+At your domain registrar (GoDaddy, Namecheap, etc.):
+
+```
+CNAME Record:
+Name: www
+Value: gozdur.github.io
+
+OR A Records (if CNAME doesn't work):
+Name: @
+Values: 
+  - 185.199.108.153
+  - 185.199.109.153
+  - 185.199.110.153
+  - 185.199.111.153
 ```
 
-Your site will be live at: `https://yourusername.github.io/ztp-website/`
+Wait 24-48 hours for DNS propagation.
 
-### Option 4: Traditional Hosting (cPanel, etc.)
+### 3. Update Sitemap
 
-**Steps:**
-1. FTP to your hosting server
-2. Upload all files to `public_html/` folder
-3. Ensure `index.html` is in root
-4. Enable HTTPS in hosting control panel
-5. Done!
+In `sitemap.xml`, replace:
+```xml
+https://zatwoimprzewodem.pl/ <!-- Keep this if using zatwoimprzewodem.pl -->
+```
 
 ---
+
+## ✅ Post-Deployment Checklist
+
+- [ ] Logo added to `assets/logo.png`
+- [ ] Contact info updated (phone, email, address)
+- [ ] Form handling configured (Formspree or EmailJS)
+- [ ] Google Analytics ID added
+- [ ] Domain configured (custom or github.io)
+- [ ] Site tested on mobile/tablet/desktop
+- [ ] All links working
+- [ ] Forms testing (submit a test form)
+- [ ] Sitemap submitted to Google Search Console
+- [ ] Site added to Bing Webmaster Tools
+
+---
+
+## 🧪 Local Testing Before Deploy
+
+```bash
+# Test locally
+python -m http.server 8000
+# Visit: http://localhost:8000
+```
+
+**Test checklist:**
+- [ ] Navigation working
+- [ ] Forms display
+- [ ] Images load
+- [ ] Mobile responsive
+- [ ] No console errors (F12)
+
+---
+
+## 📊 SEO Optimization
+
+### Submit to Search Engines
+
+**Google Search Console:**
+1. Go to https://search.google.com/search-console
+2. Add property (your domain)
+3. Verify ownership (CNAME or HTML file)
+4. Submit `sitemap.xml`
+
+**Bing Webmaster Tools:**
+1. Go to https://www.bing.com/webmasters
+2. Add site
+3. Submit sitemap
+
+### Check SEO Score
+
+Use Chrome Lighthouse (DevTools → Lighthouse):
+- Performance
+- Accessibility
+- Best Practices
+- SEO
+
+Target: 90+ on all metrics
+
+---
+
+## 🐛 Troubleshooting
+
+**Site not showing?**
+- Check Actions tab → workflow logs
+- Verify Pages settings enabled
+- Wait 2-3 minutes for deployment
+
+**Custom domain not working?**
+- Check DNS records are correct
+- Wait 24-48 hours for propagation
+- Verify CNAME file in repository
+
+**Forms not submitting?**
+- Check browser console (F12)
+- Verify form service configured
+- Test with Formspree directly
+
+**Images not loading?**
+- Check paths use relative URLs
+- Ensure files in `assets/` folder
+- Use `assets/logo.png` (not `/assets/logo.png`)
+
+---
+
+## 📁 File Structure
 
 ## 🔒 Security Checklist (Before Going Live)
 
