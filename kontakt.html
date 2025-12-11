@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kontakt - Za Twoim Przewodem. Skontaktuj się z nami aby otrzymać bezpłatną wycenę lub umówić się na wizytę elektyka.">
+  <meta name="keywords" content="kontakt, formularz kontaktowy, email, telefon, wizyta elektyka">
+  <meta property="og:title" content="Kontakt - Za Twoim Przewodem">
+  <meta property="og:description" content="Skontaktuj się z nami dla uzyskania pomocy i bezpłatnej wyceny.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zatwoimprzewodem.pl/kontakt.html">
+  <title>Kontakt - Za Twoim Przewodem | Wycena i Konsultacja</title>
+  <link rel="canonical" href="https://zatwoimprzewodem.pl/kontakt.html">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Przejdź do głównej zawartości</a>
+
+  <header role="banner">
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="assets/logo.png" alt="Za Twoim Przewodem - logo">
+        <span>Za Twoim Przewodem</span>
+      </a>
+      
+      <button class="hamburger" aria-label="Otwórz menu nawigacyjne" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav role="navigation" aria-label="Główna nawigacja">
+        <ul>
+          <li><a href="/">Strona główna</a></li>
+          <li><a href="o-nas.html">O nas</a></li>
+          <li><a href="uslugu.html">Usługi</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="Ścieżka nawigacji">
+    <ol class="breadcrumb-list">
+      <li><a href="/">Strona główna</a></li>
+      <li>Kontakt</li>
+    </ol>
+  </nav>
+
+  <main id="main" role="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container text-center">
+        <h1>Kontakt</h1>
+        <p>Skontaktuj się z nami - odpowiadamy w ciągu 24 godzin</p>
+      </div>
+    </section>
+
+    <div class="container">
+      <section class="content-section">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+          <!-- Contact Info Column -->
+          <div>
+            <h2>Informacje Kontaktowe</h2>
+
+            <div style="margin-bottom: 2rem;">
+              <h3>📞 Telefon</h3>
+              <p><a href="tel:+48123456789">+48 123 456 789</a></p>
+              <p style="font-size: 0.9rem; color: #666;">Poniedziałek - Piątek: 8:00 - 18:00</p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+              <h3>📧 Email</h3>
+              <p><a href="mailto:info@zatwoimprzewodem.pl">info@zatwoimprzewodem.pl</a></p>
+              <p style="font-size: 0.9rem; color: #666;">Odpowiadamy najszybciej jak to możliwe</p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+              <h3>📍 Adres</h3>
+              <p>
+                ul. Przykładowa 123<br>
+                00-000 Warszawa<br>
+                Polska
+              </p>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+              <h3>🕐 Godziny Pracy</h3>
+              <p>
+                <strong>Poniedziałek - Piątek:</strong><br>
+                8:00 - 18:00<br>
+                <br>
+                <strong>Sobota:</strong><br>
+                9:00 - 14:00<br>
+                <br>
+                <strong>Niedziela:</strong><br>
+                Zamknięte
+              </p>
+            </div>
+
+            <div style="background-color: #2C2C2C; color: white; padding: 1.5rem; border-radius: 8px;">
+              <h3 style="color: white; margin-top: 0;">🚨 Pilne Sprawy?</h3>
+              <p>W razie pilnych problemów elektrycznych zadzwoń bezpośrednio. Jesteśmy dostępni dla nagłych sytuacji.</p>
+              <p style="margin-bottom: 0;"><strong>Numer awaryjny: +48 123 456 789</strong></p>
+            </div>
+          </div>
+
+          <!-- Contact Form Column -->
+          <div>
+            <h2>Wyślij Wiadomość</h2>
+            <p>Wypełnij formularz poniżej, a my skontaktujemy się z Tobą w ciągu 24 godzin.</p>
+
+            <form onsubmit="handleContactFormSubmit(event)" class="contact-form">
+              <div class="form-group">
+                <label for="name">Imię i Nazwisko:</label>
+                <input type="text" id="name" name="name" required placeholder="Jan Kowalski">
+              </div>
+
+              <div class="form-group">
+                <label for="email">Adres E-mail:</label>
+                <input type="email" id="email" name="email" required placeholder="twój.email@example.com">
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Numer Telefonu:</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+48 123 456 789">
+              </div>
+
+              <div class="form-group">
+                <label for="service">Jaka usługa Cię interesuje?</label>
+                <select id="service" name="service" required>
+                  <option value="">-- Wybierz usługę --</option>
+                  <option value="pomiary">Pomiary Pięcioletnie</option>
+                  <option value="ladowarka">Instalacja Ładowarki EV/PHEV</option>
+                  <option value="instalacja">Instalacja Elektryczna</option>
+                  <option value="odbiory">Odbiory Deweloperskie</option>
+                  <option value="inne">Inne</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Wiadomość:</label>
+                <textarea id="message" name="message" required placeholder="Opisz Twoją sytuację i czego Ci potrzeba..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">Wyślij Wiadomość</button>
+              
+              <div class="form-success" id="contact-form-success">
+                <strong>Dziękujemy!</strong> Wiadomość została wysłana. Skontaktujemy się z Tobą wkrótce.
+              </div>
+
+              <p style="font-size: 0.85rem; color: #666; text-align: center;">
+                Szanujemy Twoją prywatność. Twoje dane będą użyte tylko do odpowiedzi na to zapytanie.
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- Responsive stacking for mobile -->
+        <style>
+          @media (max-width: 768px) {
+            [style*="grid-template-columns: 1fr 1fr"] {
+              grid-template-columns: 1fr !important;
+            }
+          }
+        </style>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="content-section mt-3" style="background-color: #F5F1E8; padding: 2rem; border-radius: 8px;">
+        <h2 style="margin-top: 0;">Często Zadawane Pytania</h2>
+
+        <h3>Jak szybko mogę się umówić?</h3>
+        <p>Zazwyczaj możemy przyjść w ciągu 1-2 dni roboczych. W wypadku pilnych spraw możemy przybyć w tym samym dniu. Zadzwoń, aby upewnić się o dostępności.</p>
+
+        <h3>Czy wycena jest bezpłatna?</h3>
+        <p>Tak! Wycena jest całkowicie bezpłatna i bez zobowiązań. Damy Ci szczegółowe informacje o kosztach przed rozpoczęciem pracy.</p>
+
+        <h3>Jaki jest czas pracy?</h3>
+        <p>Pracujemy od poniedziałku do piątku (8:00-18:00) oraz sobotę (9:00-14:00). Dla pilnych spraw jesteśmy dostępni poza godzinami pracy.</p>
+
+        <h3>Czy oferujecie usługi w weekendy?</h3>
+        <p>Normalne zaplanowane prace są w dni robocze. Jednak dla sytuacji awaryjnych jesteśmy dostępni także w weekendy.</p>
+
+        <h3>Na jakim terenie działacie?</h3>
+        <p>Głównie działamy w Warszawie i okolicach. Dla większych projektów rozpatrujemy poszerzenie zasięgu. Zadzwoń, aby zapytać o dostępność w Twojej lokalizacji.</p>
+
+        <h3>Jakie macie metody płatności?</h3>
+        <p>Akceptujemy transfer bankowy, gotówkę oraz karty kredytowe. Po ukończeniu pracy wystawimy fakturę VAT.</p>
+      </section>
+
+      <!-- Map Section -->
+      <section class="content-section mt-3">
+        <h2>Naszą Lokalizacja</h2>
+        <p>Odwiedź nas w naszej siedzibie lub umów się na wizytę elektyka na terenie Warszawy i okolic.</p>
+        
+        <!-- Embed Google Maps (replace with your actual location) -->
+        <div style="border-radius: 8px; overflow: hidden; margin-top: 2rem;">
+          <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%&amp;height=400&amp;hl=en&amp;q=Warszawa%20Polska&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" style="border-radius: 8px;"></iframe>
+        </div>
+      </section>
+
+      <!-- Social Media Section -->
+      <section class="content-section mt-3">
+        <h2>Śledź Nas w Mediach Społecznych</h2>
+        <p>Zostań z nami w kontakcie - śledź nas aby poznać najnowsze poady i oferty.</p>
+        
+        <div style="display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="https://facebook.com" class="btn btn-secondary">
+            📘 Facebook
+          </a>
+          <a href="https://instagram.com" class="btn btn-secondary">
+            📷 Instagram
+          </a>
+          <a href="https://linkedin.com" class="btn btn-secondary">
+            💼 LinkedIn
+          </a>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="content-section text-center mt-3" style="background-color: #2C2C2C; color: white; padding: 3rem 2rem; border-radius: 8px;">
+        <h2 style="color: white;">Nie czekaj - Skontaktuj się Dzisiaj!</h2>
+        <p style="color: #ddd; margin-bottom: 2rem;">Otrzymaj bezpłatną konsultację i wycenę swoich potrzeb elektrycznych.</p>
+        <a href="tel:+48123456789" class="btn btn-primary">Zadzwoń Teraz</a>
+      </section>
+    </div>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>O nas</h3>
+          <p>Za Twoim Przewodem to zespół profesjonalnych elektryków z ponad 15 latami doświadczenia. Specjalizujemy się w bezpiecznych instalacjach elektrycznych, pomiarach pięcioletnich i instalacji ładowarek EV.</p>
+          <div class="social-links">
+            <a href="https://facebook.com" aria-label="Facebook">f</a>
+            <a href="https://instagram.com" aria-label="Instagram">📷</a>
+            <a href="https://linkedin.com" aria-label="LinkedIn">in</a>
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Szybkie Linki</h3>
+          <ul>
+            <li><a href="/">Strona główna</a></li>
+            <li><a href="o-nas.html">O nas</a></li>
+            <li><a href="uslugu.html">Usługi</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Kontakt</h3>
+          <ul>
+            <li>📍 ul. Przykładowa 123, 00-000 Warszawa</li>
+            <li>📞 <a href="tel:+48123456789">+48 123 456 789</a></li>
+            <li>📧 <a href="mailto:info@zatwoimprzewodem.pl">info@zatwoimprzewodem.pl</a></li>
+            <li>🕐 Pon-Piątek 8:00-18:00</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Za Twoim Przewodem. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Kontakt - Za Twoim Przewodem",
+    "description": "Skontaktuj się z nami aby otrzymać pomoc i wycenę"
+  }
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
