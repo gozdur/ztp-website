@@ -95,9 +95,21 @@ body::after {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  margin-top: 1.5rem;
+  margin-top: 0.75rem;
   margin-bottom: 0.75rem;
   letter-spacing: -0.5px;
+}
+
+@media (min-width: 1024px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 1.5rem;
+  }
 }
 
 h1 {
@@ -160,7 +172,7 @@ h5 {
 }
 
 p {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
   font-size: 1.05rem;
   line-height: 1.75;
   color: #3c342d;
@@ -169,12 +181,14 @@ p {
 @media (min-width: 768px) {
   p {
     font-size: 1.1rem;
+    margin-bottom: 1.15rem;
   }
 }
 
 @media (min-width: 1024px) {
   p {
     font-size: 1.15rem;
+    margin-bottom: 1.25rem;
   }
 }
 
@@ -533,23 +547,47 @@ main {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 1.5rem;
+  padding: 1.5rem 1.5rem;
 }
 
 @media (min-width: 768px) {
   .container {
-    padding: 2.5rem 2rem;
+    padding: 2rem 2rem;
   }
 }
 
 @media (min-width: 1024px) {
+  .container {
+    padding: 2.5rem 2.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
   .container {
     padding: 3rem 3rem;
   }
 }
 
 section {
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px) {
+  section {
+    margin-bottom: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  section {
+    margin-bottom: 3.5rem;
+  }
 }
 
 article {
@@ -620,9 +658,27 @@ section ul li:hover::before {
   position: relative;
   overflow: hidden;
   color: #fff;
-  padding: 8rem 1rem 6rem;
+  padding: 3rem 1rem 3rem;
   text-align: center;
   box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.5), 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 5rem 1.5rem 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding: 6rem 2rem 5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero {
+    padding: 8rem 3rem 6rem;
+  }
 }
 
 .hero::before {
