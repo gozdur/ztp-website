@@ -44,7 +44,7 @@
        ==================================================================== -->
   <header role="banner">
     <div class="header-container">
-      <a href="/" class="logo">
+      <a href="index.html" class="logo">
         <img src="assets/logo.png" alt="Za Twoim Przewodem - logo z błyskawicą w róży wiatrów">
         <span>Za Twoim Przewodem</span>
       </a>
@@ -93,7 +93,7 @@
       <!-- Why Choose Us Section -->
       <section class="content-section">
         <h2>Dlaczego warto wybrać nas?</h2>
-        <p>Dzięki ponad 15 latom doświadczenia w branży elektrycznej, oferujemy kompleksowe rozwiązania dla domów, mieszkań i budynków użyteczności publicznej. Nasza specjalizacja obejmuje:</p>
+        <p class="section-lead">Dzięki ponad 15 latom doświadczenia w branży elektrycznej, oferujemy kompleksowe rozwiązania dla domów, mieszkań i budynków użyteczności publicznej. Nasza specjalizacja obejmuje:</p>
         
         <div class="services-grid">
           <div class="service-card">
@@ -112,6 +112,18 @@
             <div class="service-icon">🔧</div>
             <h3>Instalacje Elektryczne</h3>
             <p>Modernizacja, naprawa i nowe instalacje. Wszystkie prace wykonane zgodnie z obowiązującymi normami.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">✓</div>
+            <h3>Odbiory Developerskie</h3>
+            <p>Fachowa ocena i certyfikacja instalacji elektrycznych przejętych od dewelopera. Pełna dokumentacja techniczna.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">🍳</div>
+            <h3>Kuchenki Indukcyjne</h3>
+            <p>Profesjonalne podłączanie kuchenek z zachowaniem gwarancji i bezpieczeństwa. Zgodne z najnowszymi normami.</p>
           </div>
         </div>
       </section>
@@ -177,15 +189,15 @@
       </section>
 
       <!-- Newsletter Section -->
-      <section class="content-section mt-3" style="background-color: #F5F1E8; padding: 2rem; border-radius: 8px;">
-        <h2 style="margin-top: 0;">Subskrybuj Nasz Newsletter</h2>
+      <section class="content-section mt-3 newsletter-block">
+        <h2>Subskrybuj Nasz Newsletter</h2>
         <p>Otrzymuj porady o bezpieczeństwie elektrycznym, nowości technologiczne i specjalne oferty dla naszych subskrybenów.</p>
-        <form onsubmit="handleNewsletterSubmit(event)" class="form-container" style="margin-top: 1.5rem;">
+        <form onsubmit="handleNewsletterSubmit(event)" class="form-container">
           <div class="form-group">
             <label for="newsletter-email">Adres e-mail:</label>
             <input type="email" id="newsletter-email" name="email" required placeholder="twój.email@example.com">
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Subskrybuj</button>
+            <button type="submit" class="btn btn-primary">Subskrybuj</button>
           <div class="form-success" id="newsletter-success">
             Dziękujemy za subskrypcję! Sprawdzaj swoją skrzynkę e-mail.
           </div>
@@ -193,9 +205,9 @@
       </section>
 
       <!-- CTA Section -->
-      <section class="content-section text-center mt-3" style="background-color: #2C2C2C; color: white; padding: 3rem 2rem; border-radius: 8px;">
-        <h2 style="color: white;">Gotów na bezpieczne instalacje elektryczne?</h2>
-        <p style="color: #ddd; margin-bottom: 2rem;">Skontaktuj się z nami dzisiaj, aby otrzymać bezpłatną wycenę.</p>
+      <section class="content-section text-center mt-3 cta-band">
+        <h2>Gotów na bezpieczne instalacje elektryczne?</h2>
+        <p>Skontaktuj się z nami dzisiaj, aby otrzymać bezpłatną wycenę.</p>
         <a href="kontakt.html" class="btn btn-primary">Otrzymaj wycenę</a>
       </section>
     </div>

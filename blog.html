@@ -19,7 +19,7 @@
 
   <header role="banner">
     <div class="header-container">
-      <a href="/" class="logo">
+      <a href="index.html" class="logo">
         <img src="assets/logo.png" alt="Za Twoim Przewodem - logo">
         <span>Za Twoim Przewodem</span>
       </a>
@@ -109,15 +109,15 @@
       </section>
 
       <!-- Newsletter CTA -->
-      <section class="content-section mt-3" style="background-color: #F5F1E8; padding: 2rem; border-radius: 8px;">
-        <h2 style="margin-top: 0;">Nie przegap nowych artykułów</h2>
+      <section class="content-section mt-3 newsletter-block">
+        <h2>Nie przegap nowych artykułów</h2>
         <p>Subskrybuj nasz newsletter, aby otrzymywać nowe porady i informacje prosto do skrzynki e-mail.</p>
-        <form onsubmit="handleNewsletterSubmit(event)" class="form-container" style="margin-top: 1.5rem;">
+        <form onsubmit="handleNewsletterSubmit(event)" class="form-container">
           <div class="form-group">
             <label for="newsletter-email">Adres e-mail:</label>
             <input type="email" id="newsletter-email" name="email" required placeholder="twój.email@example.com">
           </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%;">Subskrybuj</button>
+          <button type="submit" class="btn btn-primary">Subskrybuj</button>
           <div class="form-success" id="newsletter-success">
             Dziękujemy za subskrypcję!
           </div>
