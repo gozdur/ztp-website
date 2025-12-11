@@ -913,8 +913,8 @@ section ul li:hover::before {
   font-size: 3.2rem;
   margin-bottom: 1rem;
   width: 100%;
-  max-width: 280px;
-  height: 140px;
+  max-width: 240px;
+  height: 100px;
   background: radial-gradient(circle at 30% 30%, #f9e7cd, #d4a574);
   color: #2c2c2c;
   border-radius: 12px;
@@ -924,6 +924,13 @@ section ul li:hover::before {
   transition: all 0.25s ease;
   box-shadow: 0 6px 16px rgba(212, 165, 116, 0.25);
   overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .service-icon {
+    max-width: 280px;
+    height: 140px;
+  }
 }
 
 .service-icon img {
@@ -1054,8 +1061,8 @@ section ul li:hover::before {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 320px;
-  height: 160px;
+  max-width: 260px;
+  height: 120px;
   background: radial-gradient(circle at 30% 30%, #f9e7cd, #d4a574);
   border-radius: 12px;
   display: flex;
@@ -1063,6 +1070,13 @@ section ul li:hover::before {
   justify-content: center;
   overflow: hidden;
   box-shadow: 0 6px 16px rgba(212, 165, 116, 0.25);
+}
+
+@media (min-width: 768px) {
+  .service-detail-icon {
+    max-width: 320px;
+    height: 160px;
+  }
 }
 
 .service-detail-icon img {
